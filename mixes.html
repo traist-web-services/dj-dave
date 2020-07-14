@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>DJ Dave</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<style>
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    .swipe-underline::after {
+        position: absolute;
+        content: '';
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: white;
+        transform-origin: left;
+        transition: width 0.25s ease;
+    }
+
+    .swipe-underline:hover::after {
+        width: 100%;
+    }
+
+
+    .swipe-invert,
+    .swipe-underline {
+        margin: auto;
+        background: none;
+        position: relative;
+        transition: color 0.25s ease;
+        z-index: 1;
+    }
+
+    .swipe-invert:hover {
+        color: white !important;
+    }
+
+    .swipe-invert::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #ff0e1f;
+        transform-origin: left;
+        transition: width 0.25s ease;
+    }
+
+    .swipe-invert:hover::after {
+        width: 100%;
+    }
+
+    .swipe-invert span {
+        position: relative;
+        z-index: 2
+    }
+</style>
+
+<body style="background-image: url('header.webp')" class="bg-cover bg-center">
+    <header class="h-40 flex flex items-center">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
+            <div class="py-4 md:py-0 mx-auto md:mx-0  transform transition duration-500 hover:scale-125">
+                <a href="index.html"><span
+                        class="border-4 border-white px-2 text-white text-5xl font-mono uppercase font-black tracking-widest whitespace-no-wrap">DJ
+                        Dave</span>
+                </a>
+            </div>
+            <div class="hidden md:block"></div>
+            <div
+                class="hidden md:flex flex-col md:flex-row justify-between text-white text-xl font-mono uppercase font-black tracking-widest text-center">
+                <a href="book.html" class="swipe-underline px-2"><span>BOOK</span></a>
+                <a class="swipe-underline border-b-4 border-white px-2"><span>MY MIXES</span></a>
+                <a href="about.html" class="swipe-underline px-2"><span>ABOUT</span></a>
+            </div>
+        </div>
+    </header>
+    <main class="h-full flex items-center">
+        <div class="container mx-4 md:mx-auto w-full md:w-2/5 mb-4">
+            <div class="font-mono py-6 px-4 bg-white">
+                <h1 class="text-center uppercase font-black tracking-widest text-4xl mb-8">My Mixes</h1>
+                <div class="w-full px-8">
+                    <iframe width="100%" height="400"
+                        src="https://www.mixcloud.com/widget/iframe/?light=1&feed=%2FWebberIsKing%2Fthis-is-garage-house-51-the-garage-is-strong-in-this-one-07-2020%2F"
+                        frameborder="0" class="mb-4"></iframe>
+                    <iframe width="100%" height="400"
+                        src="https://www.mixcloud.com/widget/iframe/?light=1&feed=%2Fdjcable%2Fthe-best-of-uk-garage%2F"
+                        frameborder="0"></iframe>
+                </div>
+                <p class="pl-8 mt-8">
+                    <a href="book.html"
+                        class="uppercase tracking-widest border-4 px-4 py-2 whitespace-no-wrap swipe-invert"
+                        style="border-color: #ff0e1f; color: #ff0e1f"><span>Liked that? Book now →</span></a>
+                </p>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="min-h-full flex bg-black text-white font-mono py-4">
+        <div class="container mx-auto flex flex-col justify-center items-center">
+            <div class="py-4 md:py-0 mx-auto md:mx-0 mb-2 ">
+                <a href="#"><span
+                    class="border-4 border-white px-2 text-white text-2xl font-mono uppercase font-black tracking-widest whitespace-no-wrap">DJ
+                    Dave</span>
+                </a>
+            </div>
+            <p>Call me! <a class="swipe-underline" href="tel:8675309">867-5309</a></p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-around items-center leading-loose w-full">
+                <div class="flex flex-col gap-2 items-center">
+                    <a href="book.html" class="swipe-underline"><span>BOOK</span></a>
+                    <a href="mixes.html" class="swipe-underline"><span>MY MIXES</span></a>
+                    <a href="about.html" class="swipe-underline"><span>ABOUT</span></a>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <a href="privacy.html" class="swipe-underline"><span>PRIVACY</span></a>
+                    <a href="terms.html" class="swipe-underline"><span>TERMS OF USE</span></a>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span>Designed by</span>
+                    <a href="https://traist.co.uk" class="max-w-full w-20"><img src="https://avatars0.githubusercontent.com/u/64282282?s=400&u=60b47a7c57611368195cf3c9069ecff591286fe6&v=4" /></a>
+                    <span>&copy; 2020</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.swipe-underline::after {
+    position: absolute;
+    content: '';
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: white;
+    transform-origin: left;
+    transition: width 0.25s ease;
+}
+
+.swipe-underline:hover::after {
+    width: 100%;
+}
+
+
+.swipe, .swipe-underline {
+    margin: auto;
+    background: none;
+    position: relative;
+    transition: color 0.25s ease;
+    z-index: 1;
+}
+
+.swipe:hover {
+    color: #ff0e1f;
+}
+
+.swipe::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transform-origin: left;
+    transition: width 0.25s ease;
+}
+
+.swipe:hover::after {
+    width: 100%;
+}
+
+.swipe span {
+    position: relative;
+    z-index: 2
+}
+
+#mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: black;
+    z-index: 3;
+}

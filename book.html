@@ -3,80 +3,38 @@
 <title>DJ Dave</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-<style>
-    body {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        min-height: 100vh;
-    }
-
-    .swipe-underline::after {
-        position: absolute;
-        content: '';
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 4px;
-        background-color: white;
-        transform-origin: left;
-        transition: width 0.25s ease;
-    }
-
-    .swipe-underline:hover::after {
-        width: 100%;
-    }
-
-
-    .swipe-invert, .swipe-underline {
-        margin: auto;
-        background: none;
-        position: relative;
-        transition: color 0.25s ease;
-        z-index: 1;
-    }
-
-    .swipe-invert:hover {
-        color: white !important;
-    }
-
-    .swipe-invert::after {
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: #ff0e1f;
-        transform-origin: left;
-        transition: width 0.25s ease;
-    }
-
-    .swipe-invert:hover::after {
-        width: 100%;
-    }
-
-    .swipe-invert span {
-        position: relative;
-        z-index: 2
-    }
-</style>
+<link href="style.css" rel="stylesheet">
 
 <body style="background-image: url('header.webp')" class="bg-cover bg-center">
     <header class="h-40 flex flex items-center">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
-            <div class="py-4 md:py-0 mx-auto md:mx-0  transform transition duration-500 hover:scale-125">
-                <a href="index.html"><span
+            <div class="py-4 md:py-0 mx-auto md:mx-0 transform transition duration-500 hover:scale-125">
+                <a href="#"><span
                     class="border-4 border-white px-2 text-white text-5xl font-mono uppercase font-black tracking-widest whitespace-no-wrap">DJ
                     Dave</span>
                 </a>
             </div>
+            <a id="open-mobile-nav" class="mx-auto text-white md:hidden border-2 border-white px-2 transform transition duration-200 hover:scale-105 cursor-pointer">MENU</a>
             <div class="hidden md:block"></div>
-            <div class="hidden md:flex flex-col md:flex-row justify-between text-white text-xl font-mono uppercase font-black tracking-widest text-center">
-                <a class="swipe-underline border-b-4 border-white px-2"><span>BOOK</span></a>
+            <nav class="hidden md:flex md:flex-row justify-between text-white text-xl font-mono uppercase font-black tracking-widest text-center">
+                <a href="book.html" class="swipe-underline px-2"><span>BOOK</span></a>
                 <a href="mixes.html" class="swipe-underline px-2"><span>MY MIXES</span></a>
                 <a href="about.html" class="swipe-underline px-2"><span>ABOUT</span></a>
-            </div>
+            </nav>
         </div>
+
+        <nav id="mobile-nav" class="flex flex-col justify-around text-white text-xl font-mono uppercase font-black tracking-widest text-center pb-4">
+            <div class="py-4 md:py-0 mx-auto md:mx-0 transform transition duration-500 hover:scale-125">
+                <a href="#"><span
+                    class="border-4 border-white px-2 text-white text-5xl font-mono uppercase font-black tracking-widest whitespace-no-wrap">DJ
+                    Dave</span>
+                </a>
+            </div>
+            <a href="book.html" class="swipe-underline px-2"><span>BOOK</span></a>
+            <a href="mixes.html" class="swipe-underline px-2"><span>MY MIXES</span></a>
+            <a href="about.html" class="swipe-underline px-2"><span>ABOUT</span></a>
+            <a id="close-mobile-nav" class="swipe-underline px-2 cursor-pointer">X</a>
+        </nav>
     </header>
     <main class="h-full flex items-center">
         <div class="container mx-4 md:mx-auto w-full md:w-2/5 mb-4">
